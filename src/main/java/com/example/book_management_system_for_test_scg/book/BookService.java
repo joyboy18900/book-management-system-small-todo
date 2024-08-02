@@ -20,7 +20,12 @@ public class BookService {
         return bookRepository.findById(id);
     }
 
-    public Book addBook(Book book) {
+    public Book addBook(BookRequest bookRequest) {
+        Optional<Book> existingBook = bookRepository.findByIsbn(bookRequest.getIsbn());
+        if (existingBook.isPresent()) {
+            throw new DuplicateISBNException("Book with the same ISBN already exists.");
+        }
+        Book book = new Book(bookRequest.getTitle(), bookRequest.getAuthor(), bookRequest.getIsbn(), bookRequest.getPublishedDate());
         return bookRepository.save(book);
     }
 

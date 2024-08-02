@@ -5,9 +5,10 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "account")
+@Table(name = "book")
 public class Book {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "title")
@@ -21,6 +22,9 @@ public class Book {
 
     @Column(name = "published_date")
     private LocalDate publishedDate;
+
+    public Book(String title, String author, String isbn, LocalDate publishedDate) {
+    }
 
     public Long getId() {
         return id;
