@@ -1,12 +1,25 @@
 package com.example.book_management_system_for_test_scg.book;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "account")
 public class Book {
+    @Id
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "author")
     private String author;
+
+    @Column(name = "isbn")
     private String isbn;
+
+    @Column(name = "published_date")
     private LocalDate publishedDate;
 
     public Long getId() {
