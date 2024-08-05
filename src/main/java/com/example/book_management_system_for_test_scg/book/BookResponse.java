@@ -4,7 +4,7 @@ import java.util.List;
 
 public class BookResponse {
     private String code;
-    private List<Book> accountList;
+    private List<Book> bookList;
     private Boolean status;
 
     public String getCode() {
@@ -15,12 +15,12 @@ public class BookResponse {
         this.code = code;
     }
 
-    public List<Book> getAccountList() {
-        return accountList;
+    public List<Book> getBookList() {
+        return bookList;
     }
 
-    public void setAccountList(List<Book> accountList) {
-        this.accountList = accountList;
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
     }
 
     public Boolean getStatus() {

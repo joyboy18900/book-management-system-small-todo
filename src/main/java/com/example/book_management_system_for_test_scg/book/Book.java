@@ -23,7 +23,21 @@ public class Book {
     @Column(name = "published_date")
     private LocalDate publishedDate;
 
+    public Book() {
+    }
+
+    public Book(Long id, String title, String author, String isbn, LocalDate publishedDate) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publishedDate = publishedDate;
+    }
+
     public Book(String title, String author, String isbn, LocalDate publishedDate) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publishedDate = publishedDate;
     }
 
     public Long getId() {
@@ -64,5 +78,16 @@ public class Book {
 
     public void setPublishedDate(LocalDate publishedDate) {
         this.publishedDate = publishedDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", publishedDate=" + publishedDate +
+                '}';
     }
 }

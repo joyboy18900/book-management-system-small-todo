@@ -29,12 +29,12 @@ public class BookService {
         return bookRepository.save(book);
     }
 
-    public Optional<Book> updateBook(Long id, Book bookDetails) {
+    public Optional<Book> updateBook(Long id, BookRequest bookRequest) {
         return bookRepository.findById(id).map(book -> {
-            book.setTitle(bookDetails.getTitle());
-            book.setAuthor(bookDetails.getAuthor());
-            book.setIsbn(bookDetails.getIsbn());
-            book.setPublishedDate(bookDetails.getPublishedDate());
+            book.setTitle(bookRequest.getTitle());
+            book.setAuthor(bookRequest.getAuthor());
+            book.setIsbn(bookRequest.getIsbn());
+            book.setPublishedDate(bookRequest.getPublishedDate());
             return bookRepository.save(book);
         });
     }
