@@ -31,6 +31,10 @@ public class BookService {
 
     public Optional<Book> updateBook(Long id, BookRequest bookRequest) {
         return bookRepository.findById(id).map(book -> {
+            Optional<Book> existingBook = bookRepository.findByIsbn(bookRequest.getIsbn());
+            if (existingBook.isPresent() && !existingBook.get().getId().equals(id)) {
+                throw new DuplicateISBNException("Book with the same ISBN already exists.");
+            }
             book.setTitle(bookRequest.getTitle());
             book.setAuthor(bookRequest.getAuthor());
             book.setIsbn(bookRequest.getIsbn());
