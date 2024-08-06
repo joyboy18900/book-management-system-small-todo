@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "7482ce63-b4d6-45a0-8f16-cfacf22a193a",
+		"name": "Book Management System for test SCG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23750782"
+	},
+	"item": [
+		{
+			"name": "Retrieve all books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountHolderName\": \"\",\n    \"balance\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost8080}}/books",
+					"host": [
+						"{{localhost8080}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve a book by ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"accountHolderName\": \"\",\n    \"balance\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost8080}}/books/1",
+					"host": [
+						"{{localhost8080}}"
+					],
+					"path": [
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add a new book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"title\": \"Book Title\",\n  \"author\": \"Author Name\",\n  \"isbn\": \"123-4567890123\",\n  \"publishedDate\": \"2024-08-04\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost8080}}/books",
+					"host": [
+						"{{localhost8080}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a book by ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"title\": \"Book Title\",\n  \"author\": \"Author Name\",\n  \"isbn\": \"123-4567890123\",\n  \"publishedDate\": \"2024-08-04\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost8080}}/books/2",
+					"host": [
+						"{{localhost8080}}"
+					],
+					"path": [
+						"books",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a book by ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"title\": \"Example Book Title\",\n  \"author\": \"Author Name\",\n//   \"isbn\": \"123-4567890123\",\n  \"isbn\": \"123-45\",\n  \"publishedDate\": \"2024-10-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost8080}}/books/1",
+					"host": [
+						"{{localhost8080}}"
+					],
+					"path": [
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost8080",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
