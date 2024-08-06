@@ -1,6 +1,6 @@
 package com.example.book_management_system_for_test_scg.errors;
 
-public class MyError {
+public class ErrorResponse {
 	private String code;
 	private String description;
 	private Boolean status;
