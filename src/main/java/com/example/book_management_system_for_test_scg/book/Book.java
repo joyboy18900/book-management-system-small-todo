@@ -24,9 +24,6 @@ public class Book {
     @Column(name = "published_date")
     private LocalDate publishedDate;
 
-    public Book() {
-    }
-
     public Book(Long id, String title, String author, String isbn, LocalDate publishedDate) {
         this.title = title;
         this.author = author;

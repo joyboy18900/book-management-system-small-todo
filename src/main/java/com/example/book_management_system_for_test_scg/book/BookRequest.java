@@ -21,6 +21,13 @@ public class BookRequest {
     @NotNull(message = "Published date is mandatory")
     private LocalDate publishedDate;
 
+    public BookRequest(String title, String author, String isbn, LocalDate publishedDate) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.publishedDate = publishedDate;
+    }
+
     public String getTitle() {
         return title;
     }
